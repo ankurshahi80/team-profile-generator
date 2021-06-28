@@ -27,7 +27,11 @@ const promptUser =() => {
             name: 'officeNumber',
             message: "Enter the team manager's office number:",
         }
-    ]);
+    ])
+    .then(empData => {
+        let manager=new Manager(empData.name,empData.id,empData.email,empData.officeNumber);
+        return manager;
+    });;
 };
 
 const promptEngineer = teamData =>{
@@ -60,7 +64,8 @@ const promptEngineer = teamData =>{
         }
     ])
     .then(empData => {
-        teamData.engineers.push(empData);
+        let engineer=new Engineer(empData.name,empData.id,empData.email,empData.github);
+        teamData.engineers.push(engineer);
         return promptChoice(teamData);
     });
 }
@@ -93,7 +98,8 @@ const promptIntern = teamData=>{
         }
     ])
     .then(empData => {
-        teamData.interns.push(empData);
+        let intern = new Intern(empData.id, empData.name, empData.email, empData.school) 
+        teamData.interns.push(intern);
         return promptChoice(teamData);
     });
 }
