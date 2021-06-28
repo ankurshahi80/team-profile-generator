@@ -5,7 +5,6 @@ A Node.js command-line application that takes in a team's employee information a
 <img width="572" alt="Screen Shot 2021-06-27 at 11 01 10 PM" src="https://user-images.githubusercontent.com/79622822/123573327-ba463c80-d79b-11eb-862c-cf389428f33a.png">
 
 ## Table of Contents
-## Table of Contents
  * [Installation](#installation)
  * [Usage](#usage)
  * [Contributing](#contributing)
