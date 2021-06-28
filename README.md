@@ -33,3 +33,11 @@ A Node.js command-line application that takes in a team's employee information a
   [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 
 ## Demo
+https://drive.google.com/file/d/1mUajf9_y9H_LMBxT-NLCqRMQ-JqsuePt/view
+
+## License
+MIT
+
+## Questions
+Got questions? Check out my github profile: [ankurshahi80](https://github.com/ankurshahi80)
+or reach me at shahiankur80@gmail.com with your queries.
