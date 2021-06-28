@@ -3,6 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const generatePage = require('./src/page-template');
+const writeFile = require ('./utils/generate-site');
 
 const promptUser =() => {
     return inquirer.prompt([
@@ -30,7 +31,7 @@ const promptUser =() => {
 };
 
 const promptEngineer = teamData =>{
-    console.log(teamData);
+    
     // If there's no 'Engineer' array property, create one
     if(!teamData.engineers) {
         teamData.engineers=[];
@@ -98,7 +99,6 @@ const promptIntern = teamData=>{
 }
 
 const promptChoice = teamData => {
-    console.log(teamData);
     return inquirer.prompt([
         {
             type: 'list',
@@ -117,8 +117,7 @@ const promptChoice = teamData => {
         } else if ( data.choice === "Add an intern") {
             return promptIntern(teamData);
         } else {
-            return
-            console.log ("finish building the team")
+            return teamData;
         };
     })
  };
@@ -127,8 +126,13 @@ const promptChoice = teamData => {
 promptUser()
     .then(promptChoice)
     .then(teamData =>{
-        console.log(teamData);
         return generatePage(teamData);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
     })
     .catch(err=>{
         console.log(err);
